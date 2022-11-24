@@ -20,7 +20,7 @@ class SearchResult extends StatelessWidget {
         Expanded(
             child: GridView.count(
           crossAxisSpacing: 10,
-          childAspectRatio: 2/3,
+          childAspectRatio: 2 / 3,
           mainAxisSpacing: 10,
           shrinkWrap: true,
           crossAxisCount: 3,
@@ -37,9 +37,9 @@ class MainCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       height: 300,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(5),
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
           image: DecorationImage(
               image: NetworkImage(imageurl), fit: BoxFit.cover)),
     );

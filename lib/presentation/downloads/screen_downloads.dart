@@ -37,7 +37,10 @@ class ScreenDownload extends StatelessWidget {
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             )
           ],
-        ),SizedBox(height: 40,),
+        ),
+      const  SizedBox(
+          height: 40,
+        ),
         const Center(
           child: Text(
             'Indroducing Downloads for you',
@@ -119,7 +122,7 @@ class ScreenDownload extends StatelessWidget {
             child: MaterialButton(
               minWidth: size.width * 0.7,
               onPressed: () {},
-              color: Color.fromARGB(255, 22, 120, 201),
+              color: const Color.fromARGB(255, 22, 120, 201),
               child: const Text(
                 'Set up',
                 style: TextStyle(

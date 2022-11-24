@@ -44,7 +44,8 @@ class HomeFirstSection extends StatelessWidget {
                 SizedBox(
                   height: 470,
                 ),
-                Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Column(
                       children: const [
@@ -52,7 +53,10 @@ class HomeFirstSection extends StatelessWidget {
                           Icons.add,
                           color: whitecolor,
                         ),
-                        Text('My List', style: TextStyle(fontWeight: FontWeight.bold),)
+                        Text(
+                          'My List',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        )
                       ],
                     ),
                     Stack(
@@ -60,16 +64,21 @@ class HomeFirstSection extends StatelessWidget {
                         Container(
                           height: 30,
                           width: 80,
-                          decoration: BoxDecoration(color: whitecolor,borderRadius: BorderRadius.circular(3)),
+                          decoration: BoxDecoration(
+                              color: whitecolor,
+                              borderRadius: BorderRadius.circular(3)),
                         ),
-                        Positioned(left:8,
-                        top: 2,
+                        Positioned(
+                          left: 8,
+                          top: 2,
                           child: Row(
                             children: const [
-                              Icon(Icons.play_arrow,size: 25),
+                              Icon(Icons.play_arrow, size: 25),
                               Text(
                                 'Play',
-                                style: TextStyle(color: blackcolor,fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                    color: blackcolor,
+                                    fontWeight: FontWeight.bold),
                               )
                             ],
                           ),
@@ -82,7 +91,8 @@ class HomeFirstSection extends StatelessWidget {
                           Icons.info_outlined,
                           color: whitecolor,
                         ),
-                        Text('Info',style: TextStyle(fontWeight: FontWeight.bold))
+                        Text('Info',
+                            style: TextStyle(fontWeight: FontWeight.bold))
                       ],
                     )
                   ],

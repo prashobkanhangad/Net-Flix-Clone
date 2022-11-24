@@ -16,7 +16,7 @@ class SearchIdelewidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-         SearchTexttitle(title: 'Top Searches'),
+        SearchTexttitle(title: 'Top Searches'),
         Height,
         Expanded(
           child: ListView.separated(
@@ -33,7 +33,6 @@ class SearchIdelewidget extends StatelessWidget {
     );
   }
 }
-
 
 class TopsearchItemTile extends StatelessWidget {
   const TopsearchItemTile({super.key});
@@ -53,13 +52,18 @@ class TopsearchItemTile extends StatelessWidget {
               image: NetworkImage(imageurl),
             ),
           ),
-        ),Width,
+        ),
+        Width,
         const Expanded(
             child: Text(
           'Movie Name',
           style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
         )),
-        Icon(CupertinoIcons.play_circle, color: whitecolor,size: 36,)
+        Icon(
+          CupertinoIcons.play_circle,
+          color: whitecolor,
+          size: 36,
+        )
       ],
     );
   }

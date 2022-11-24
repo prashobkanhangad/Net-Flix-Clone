@@ -38,7 +38,9 @@ class VideolistItem extends StatelessWidget {
                     CircleAvatar(
                         radius: 23,
                         backgroundImage: NetworkImage(
-                            'https://www.themoviedb.org/t/p/w1280/5dDniQcwkvyvLNsqpQp4GRG5KGJ.jpg')),Height,Height,
+                            'https://www.themoviedb.org/t/p/w1280/5dDniQcwkvyvLNsqpQp4GRG5KGJ.jpg')),
+                    Height,
+                    Height,
                     VideoActionWidget(icon: Icons.emoji_emotions, title: 'LOL'),
                     VideoActionWidget(icon: Icons.add, title: 'MY LIST'),
                     VideoActionWidget(icon: Icons.share, title: 'Share'),

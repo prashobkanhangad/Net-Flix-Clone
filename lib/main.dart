@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:netflix/application/search/search_bloc.dart';
 import 'package:netflix/core/colors/colors.dart';
+import 'package:netflix/domain/core/di/injectable.dart';
 import 'package:netflix/presentation/main_page/screen_main_page.dart';
 
-void main() {
+Future<void> main()async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await configureInjection();
+  
   runApp(const MyApp());
 }
 
@@ -13,20 +19,29 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Netflix',
-      theme: ThemeData(
-        fontFamily: GoogleFonts.montserrat().fontFamily,
-        scaffoldBackgroundColor: backgroundColor,
-        textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.white),
-          bodyText2: TextStyle(color: Colors.white),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (ctx) => getIt<SearchBloc>(),
         ),
-        primarySwatch: Colors.blue,
-        backgroundColor: Colors.black,
+  
+      ],
+   
+      child: MaterialApp(
+        title: 'Netflix',
+        theme: ThemeData(
+          fontFamily: GoogleFonts.montserrat().fontFamily,
+          scaffoldBackgroundColor: backgroundColor,
+          textTheme: TextTheme(
+            bodyText1: TextStyle(color: Colors.white),
+            bodyText2: TextStyle(color: Colors.white),
+          ),
+          primarySwatch: Colors.blue,
+          backgroundColor: Colors.black,
+        ),
+        debugShowCheckedModeBanner: false,
+        home: ScreenMainPage(),
       ),
-      debugShowCheckedModeBanner: false,
-      home: ScreenMainPage(),
     );
   }
 }

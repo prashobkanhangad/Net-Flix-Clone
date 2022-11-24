@@ -12,7 +12,9 @@ class Home_appbar_Widget extends StatelessWidget {
         const SizedBox(
           width: 10,
         ),
-        Container(width: 50,height: 40,
+        Container(
+            width: 50,
+            height: 40,
             child: Image(
                 image: NetworkImage(
                     'https://www.pngplay.com/wp-content/uploads/7/Netflix-Logo-PNG-HD-Quality.png'))),

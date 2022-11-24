@@ -11,9 +11,9 @@ class ScreenHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold( 
+    return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric (vertical: 10.0),
+        padding: const EdgeInsets.symmetric(vertical: 10.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,7 +44,7 @@ class ScreenHome extends StatelessWidget {
                   ),
                 ),
               ),
-                Height,
+              Height,
               MainTitle(title: 'Top 10 TV  Shows In India Today'),
               Height,
               LimitedBox(
@@ -53,11 +53,11 @@ class ScreenHome extends StatelessWidget {
                   scrollDirection: Axis.horizontal,
                   children: List.generate(
                     10,
-                    (index) =>  NumberCard(index: index),
+                    (index) => NumberCard(index: index),
                   ),
                 ),
               ),
-                Height,
+              Height,
               MainTitle(title: 'South Indian Cinema'),
               Height,
               LimitedBox(
