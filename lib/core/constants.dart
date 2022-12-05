@@ -6,3 +6,5 @@ const Width = SizedBox(
 const Height = SizedBox(
   height: 10,
 );
+
+const imageappendurl = 'https://image.tmdb.org/t/p/w500';

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MainCardTile extends StatelessWidget {
-  const MainCardTile({super.key});
+  final String url;
+  const MainCardTile({super.key,required this.url});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,7 @@ class MainCardTile extends StatelessWidget {
             image: DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
-                    'https://www.themoviedb.org/t/p/w1280/5dDniQcwkvyvLNsqpQp4GRG5KGJ.jpg'))),
+                    url))),
       ),
     );
   }

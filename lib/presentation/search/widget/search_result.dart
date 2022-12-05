@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:netflix/core/colors/constants.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:netflix/application/search/search_bloc.dart';
+
+import 'package:netflix/core/constants.dart';
 import 'package:netflix/presentation/search/widget/title.dart';
 
-final imageurl =
-    'https://www.themoviedb.org/t/p/w1280/5dDniQcwkvyvLNsqpQp4GRG5KGJ.jpg';
-
 class SearchResult extends StatelessWidget {
-  const SearchResult({super.key});
+  const SearchResult({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -17,14 +17,22 @@ class SearchResult extends StatelessWidget {
       children: [
         SearchTexttitle(title: 'Movies & Tv Shows'),
         Height,
-        Expanded(
-            child: GridView.count(
-          crossAxisSpacing: 10,
-          childAspectRatio: 2 / 3,
-          mainAxisSpacing: 10,
-          shrinkWrap: true,
-          crossAxisCount: 3,
-          children: List.generate(20, (index) => MainCard()),
+        Expanded(child: BlocBuilder<SearchBloc, SearchState>(
+          builder: (context, state) {
+            return GridView.count(
+              crossAxisSpacing: 10,
+              childAspectRatio: 2 / 3,
+              mainAxisSpacing: 10,
+              shrinkWrap: true,
+              crossAxisCount: 3,
+              children: List.generate(20, (index) {
+                final movie = state.searchResultList[index];
+                return MainCard(
+                  imageurl: '$imageappendurl${movie.posterimageurl}',
+                );
+              }),
+            );
+          },
         ))
       ],
     );
@@ -32,7 +40,9 @@ class SearchResult extends StatelessWidget {
 }
 
 class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+  final String imageurl;
+
+  const MainCard({super.key, required this.imageurl});
 
   @override
   Widget build(BuildContext context) {
